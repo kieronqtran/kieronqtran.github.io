@@ -5,14 +5,22 @@ description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://kieronqtran.github.com" # the base hostname & protocol for your site
+
+baseurl: "" 
+permalink: /:title
+sass:
+  compressed: true
+
+url: "https://kieronqtran.github.io" # the base hostname & protocol for your site
+
 twitter_username: kieronqtran
 github_username:  kieronqtran
 
 # Build settings
 markdown: kramdown
 gems: 
-  # - jekyll-multiple-languages-plugin
+  - jekyll-multiple-languages-plugin
 
-# languages: ["en", "vi"]
+languages: ["en", "vi"]
+
+exclude_from_localizations: ["images", "css", "Gemfile", "scripts", "favicon.ico", "LICENSE", "README.md", "ssl"]
