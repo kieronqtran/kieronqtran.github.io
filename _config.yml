@@ -8,17 +8,19 @@ description: > # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
-#url settings
-baseurl: "" 
-permalink: /:title
-# url: "https://kieronqtran.github.io" 
-url: "https://127.0.0.1:4000" 
+timezone: Etc/GMT-7
 
-paginate: 2
+#url settings
+baseurl: ""
+permalink: /:title
+# url: "https://kieronqtran.github.io"
+url: "https://127.0.0.1:4000"
+
+paginate: 10
 paginate_path: "/page:num/"
 
 # Build settings
-gems: 
+gems:
   - jekyll-paginate
   - jekyll-multiple-languages-plugin
   - material_design_lite-sass
@@ -31,10 +33,13 @@ markdown: kramdown
 sass:
   style: compressed
 
-compress_html: # http://jch.penibelst.de/
+# http://jch.penibelst.de/
+compress_html:
   clippings: all
   comments: all
   endings: all
+  ignore:
+    envs: [development]
   profile: false
   startings: [head, body]
 
