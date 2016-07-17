@@ -12,8 +12,8 @@ timezone: Etc/GMT-7
 
 #url settings
 baseurl: ""
-permalink: /:title
-url: "https://kieronqtran.github.io"
+permalink: /:year/:month/:day/:title
+url: "https://127.0.0.1:4000"
 
 paginate: 10
 paginate_path: "/page:num/"
@@ -31,7 +31,40 @@ exclude: ["ssl", "Gemfile", "Gemfile.lock", "README.md","_config-dev.yml"]
 markdown: kramdown
 
 sass:
-  style: compressed
+
+assets:
+  compress:
+    css: false
+    js: false
+
+  #
+
+  autowrite: true
+  cache: .asset-cache
+  cache_type: filesystem
+  skip_baseurl_with_cdn: false
+  skip_prefix_with_cdn: false
+  prefix: "/assets"
+  digest: true
+
+  #
+
+  sources:
+    - _assets/css
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/fonts
+    - _assets/img
+    - _assets/js
+
+  #
+
+  features:
+    liquid: false
+    integrity: false
+    automatic_img_size: true
+    automatic_img_alt : true
 
 # http://jch.penibelst.de/
 compress_html:
